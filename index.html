@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+
+        <title>BAJIGAR - Login</title>
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+
+    <body>
+
+
+        
+
+        <div class="cards" id="cards">
+
+            <div class="card login">
+
+
+                <div class="logo">
+
+                    <img
+                        src="BAJIGAR.png"
+                        alt="BAJIGAR"
+                    >
+
+                </div>
+
+
+                <h2>Welcome Back</h2>
+
+
+                <p class="subtitle">
+                    CODE_WITH_BAJIGAR
+                </p>
+
+
+                <form onsubmit="login(event)">
+
+                    <div class="input-box">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+
+                        <label>Password</label>
+
+                        <div class="password">
+
+                            <input
+                                type="password"
+                                id="loginPassword"
+                                placeholder="Enter your password"
+                                required
+                            >
+
+                            <span
+                                onclick="showPassword('loginPassword', this)"
+                            >
+                                Show
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Options -->
+
+                    <div class="options">
+
+                        <label class="remember">
+
+                            <input type="checkbox">
+
+                            Remember me
+
+                        </label>
+
+
+                        <span class="forgot">
+                            Forgot password?
+                        </span>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Login
+                    </button>
+
+
+                </form>
+
+
+                <!-- Create Account -->
+
+                <p class="switch">
+
+                    Don't have an account?
+
+                    <a onclick="showRegister()">
+                        Create Account
+                    </a>
+
+                </p>
+
+
+                <!-- Login Message -->
+
+                <p
+                    class="message"
+                    id="loginMessage"
+                ></p>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                REGISTER CARD
+            ========================== -->
+
+            <div class="card register">
+
+
+                <div class="logo">
+
+                    <img
+                        src="BAJIGAR.png"
+                        alt="BAJIGAR"
+                    >
+
+                </div>
+
+
+                <h2>Create Account</h2>
+
+
+                <p class="subtitle">
+                    CODE_WITH_BAJIGAR
+                </p>
+
+
+                <form onsubmit="register(event)">
+
+
+                    <!-- Full Name -->
+
+                    <div class="input-box">
+
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="input-box">
+
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="input-box">
+
+                        <label>Password</label>
+
+                        <div class="password">
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Create password"
+                                minlength="6"
+                                required
+                            >
+
+                            <span
+                                onclick="showPassword('password', this)"
+                            >
+                                Show
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="input-box">
+
+                        <label>Confirm Password</label>
+
+                        <div class="password">
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm password"
+                                minlength="6"
+                                required
+                            >
+
+                            <span
+                                onclick="showPassword('confirmPassword', this)"
+                            >
+                                Show
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Create Account Button -->
+
+                    <button
+                        type="submit"
+                        class="btn"
+                    >
+                        Create Account
+                    </button>
+
+
+                </form>
+
+
+                <!-- Login -->
+
+                <p class="switch">
+
+                    Already have an account?
+
+                    <a onclick="showLogin()">
+                        Login
+                    </a>
+
+                </p>
+
+
+                <!-- Register Message -->
+
+                <p
+                    class="message"
+                    id="registerMessage"
+                ></p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        
+
+        <div
+            class="success-page"
+            id="successPage"
+        >
+
+
+            <div class="success-card">
+
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+
+                <h2 id="successTitle">
+                    Success
+                </h2>
+
+
+                <p id="successText">
+                    Your action was completed successfully.
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        
+
+        <script src="script.js"></script>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,1173 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+}
+
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+
+    background:
+
+        linear-gradient(
+            rgba(1, 8, 27, 0.459),
+            rgba(2, 8, 25, 0.446)
+        ),
+
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1920&q=85");
+
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+
+/* =========================
+   MAIN CARDS CONTAINER
+========================= */
+
+.cards {
+
+    position: relative;
+
+    width: min(390px, 92vw);
+
+    height: min(620px, calc(100vh - 30px));
+
+}
+
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+
+    position: absolute;
+
+    inset: 0;
+
+    padding: 30px;
+
+
+    border-radius: 25px;
+
+
+    background: rgba(101, 101, 101, 0.193);
+
+
+    border: 1px solid rgba(255, 255, 255, 0.063);
+
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+
+    box-shadow:
+
+        0 25px 60px rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+
+        inset 0 0 30px rgba(
+            255,
+            255,
+            255,
+            0.03
+        );
+
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+
+    transition:
+
+        transform 0.65s
+        cubic-bezier(
+            .68,
+            -0.55,
+            .27,
+            1.55
+        ),
+
+        opacity 0.5s ease,
+
+        filter 0.5s ease;
+}
+
+
+
+/* =========================
+   LOGIN FRONT
+========================= */
+
+.login {
+
+    z-index: 2;
+
+    transform:
+        translate(0, 0)
+        scale(1);
+
+}
+
+
+
+/* =========================
+   REGISTER BEHIND
+========================= */
+
+.register {
+
+    z-index: 1;
+
+    transform:
+        translate(32px, 25px)
+        scale(0.94);
+
+    opacity: 0.55;
+
+    filter: brightness(0.55);
+
+}
+
+
+
+/* =========================
+   REGISTER OPEN
+========================= */
+
+.cards.show-register .login {
+
+    transform:
+        translate(-32px, -25px)
+        scale(0.94);
+
+    opacity: 0.55;
+
+    filter: brightness(0.55);
+
+}
+
+
+.cards.show-register .register {
+
+    z-index: 3;
+
+    transform:
+        translate(0, 0)
+        scale(1);
+
+    opacity: 1;
+
+    filter: brightness(1);
+
+}
+
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+.card::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+.card::-webkit-scrollbar-track {
+
+    background: transparent;
+
+}
+
+
+.card::-webkit-scrollbar-thumb {
+
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 10px;
+
+}
+
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+
+    width: 70px;
+
+    height: 70px;
+
+    margin:
+        0 auto 15px;
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00c6ff,
+            #0072ff
+        );
+
+
+    box-shadow:
+
+        0 0 20px
+        rgba(
+            0,
+            174,
+            255,
+            0.6
+        );
+
+
+    animation:
+        logoIn 0.8s ease;
+
+}
+
+
+.logo img {
+
+    width: 64px;
+
+    height: 64px;
+
+
+    border-radius: 50%;
+
+
+    object-fit: cover;
+
+}
+
+
+
+/* =========================
+   LOGO ANIMATION
+========================= */
+
+@keyframes logoIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0)
+            rotate(-180deg);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   HEADING
+========================= */
+
+h2 {
+
+    text-align: center;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+
+    color: #ffffff;
+
+}
+
+
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.subtitle {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #ff4d4d;
+
+
+    text-shadow:
+
+        0 0 10px
+        rgba(
+            255,
+            0,
+            0,
+            0.45
+        );
+
+}
+
+
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box {
+
+    margin-bottom: 17px;
+
+}
+
+
+
+/* =========================
+   LABEL
+========================= */
+
+label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    color: #d9e7ff;
+
+}
+
+
+
+/* =========================
+   INPUT
+========================= */
+
+input {
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+
+    border-radius: 10px;
+
+
+    outline: none;
+
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+
+    color: white;
+
+
+    font-size: 14px;
+
+
+    transition: 0.3s;
+
+}
+
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+input::placeholder {
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.45
+        );
+
+}
+
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+input:focus {
+
+    border-color: #00b7ff;
+
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.11
+        );
+
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(
+            0,
+            183,
+            255,
+            0.12
+        ),
+
+        0 0 18px
+        rgba(
+            0,
+            183,
+            255,
+            0.18
+        );
+
+}
+
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password {
+
+    position: relative;
+
+}
+
+
+.password input {
+
+    padding-right: 60px;
+
+}
+
+
+.password span {
+
+    position: absolute;
+
+    right: 13px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+
+    cursor: pointer;
+
+    color: #00b7ff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   OPTIONS
+========================= */
+
+.options {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+
+    margin:
+        5px 0 20px;
+
+
+    font-size: 12px;
+
+}
+
+
+
+/* =========================
+   REMEMBER
+========================= */
+
+.remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #cbd7e8;
+
+}
+
+
+.remember input {
+
+    width: 14px;
+
+    height: 14px;
+
+    accent-color: #00aaff;
+
+}
+
+
+
+/* =========================
+   FORGOT
+========================= */
+
+.forgot {
+
+    color: #00b7ff;
+
+    cursor: pointer;
+
+}
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+
+    border: none;
+
+    border-radius: 10px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00c6ff,
+            #0072ff
+        );
+
+
+    color: white;
+
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+
+    cursor: pointer;
+
+
+    transition: 0.3s;
+
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(
+            0,
+            114,
+            255,
+            0.3
+        );
+
+}
+
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+
+    box-shadow:
+
+        0 12px 28px
+        rgba(
+            0,
+            174,
+            255,
+            0.45
+        );
+
+}
+
+
+
+/* =========================
+   BUTTON ACTIVE
+========================= */
+
+.btn:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    color: #b8c5d8;
+
+}
+
+
+.switch a {
+
+    color: #00b7ff;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+}
+
+
+.switch a:hover {
+
+    text-shadow:
+
+        0 0 10px #00b7ff;
+
+}
+
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    min-height: 18px;
+
+    font-size: 13px;
+
+}
+
+
+
+/* =========================
+   SUCCESS PAGE
+========================= */
+
+.success-page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+
+    z-index: 100;
+
+
+    background:
+
+        linear-gradient(
+            rgba(2, 8, 25, 0.72),
+            rgba(2, 8, 25, 0.86)
+        ),
+
+        url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1920&q=85");
+
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+
+/* =========================
+   SHOW SUCCESS PAGE
+========================= */
+
+.success-page.show {
+
+    display: flex;
+
+    animation:
+        successFade 0.45s ease;
+
+}
+
+
+
+/* =========================
+   SUCCESS CARD
+========================= */
+
+.success-card {
+
+    width: min(390px, 92vw);
+
+    padding: 42px 30px;
+
+    text-align: center;
+
+
+    border-radius: 25px;
+
+
+    background:
+        rgba(
+            7,
+            18,
+            45,
+            0.88
+        );
+
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(
+            0,
+            0,
+            0,
+            0.55
+        ),
+
+        inset 0 0 30px
+        rgba(
+            255,
+            255,
+            255,
+            0.03
+        );
+
+
+    animation:
+
+        successCardIn
+        0.65s
+        cubic-bezier(
+            .68,
+            -.55,
+            .27,
+            1.55
+        );
+
+}
+
+
+
+/* =========================
+   SUCCESS ICON
+========================= */
+
+.success-icon {
+
+    width: 82px;
+
+    height: 82px;
+
+    margin:
+        0 auto 20px;
+
+
+    border-radius: 50%;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #00ffae,
+            #00aaff
+        );
+
+
+    box-shadow:
+
+        0 0 30px
+        rgba(
+            0,
+            255,
+            174,
+            0.35
+        );
+
+
+    color: #03162a;
+
+
+    font-size: 43px;
+
+    font-weight: bold;
+
+}
+
+
+
+/* =========================
+   SUCCESS HEADING
+========================= */
+
+.success-card h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================
+   SUCCESS TEXT
+========================= */
+
+.success-card p {
+
+    color: #cbd7e8;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+
+/* =========================
+   SUCCESS ANIMATION
+========================= */
+
+@keyframes successFade {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+@keyframes successCardIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.85);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 450px) {
+
+
+    .cards {
+
+        width: 90vw;
+
+        height:
+            calc(100vh - 20px);
+
+    }
+
+
+    .card {
+
+        padding:
+            25px 22px;
+
+        border-radius: 22px;
+
+    }
+
+
+    h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .logo {
+
+        width: 62px;
+
+        height: 62px;
+
+    }
+
+
+    .logo img {
+
+        width: 56px;
+
+        height: 56px;
+
+    }
+
+
+    .register {
+
+        transform:
+            translate(18px, 18px)
+            scale(0.95);
+
+    }
+
+
+    .cards.show-register .login {
+
+        transform:
+            translate(-18px, -18px)
+            scale(0.95);
+
+    }
+
+}
+
+
+
+/* =========================
+   SHORT SCREEN
+========================= */
+
+@media (max-height: 650px) {
+
+
+    .cards {
+
+        height: 96vh;
+
+    }
+
+
+    .card {
+
+        padding-top: 20px;
+
+        padding-bottom: 20px;
+
+    }
+
+
+    .logo {
+
+        width: 55px;
+
+        height: 55px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .logo img {
+
+        width: 50px;
+
+        height: 50px;
+
+    }
+
+
+    h2 {
+
+        margin-bottom: 5px;
+
+    }
+
+
+    .subtitle {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .input-box {
+
+        margin-bottom: 12px;
+
+    }
+
+}
